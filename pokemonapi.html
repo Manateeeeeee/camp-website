@@ -7,10 +7,46 @@
     #pokemon {
       width: 300px;
     }
-
+    h1 {
+      color: grey;
+    }
+    a {
+      font-weight: bold;
+    }
     #pokemonImage {
       width: 100%;
     }
+
+    .marquee-text {
+    display: inline-block;
+    padding-left: 100%;
+    white-space: nowrap;
+    animation: marquee 10s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translate(0); }
+    100% { transform: translate(-100%); }
+  }
+/* animationプロパティの用意 */
+.fluffy {
+  animation: girl-animation 1.8s ease-in-out infinite alternate-reverse;
+}
+
+/* animationプロパティの用意 */
+.girl-animation {
+  animation: girl-animation 1.8s ease-in-out infinite alternate-reverse;
+}
+
+/* @keyframesの用意 */
+@keyframes girl-animation {
+  0% {
+    transform: translateX(-12px);
+  }
+  100% {
+    transform: translateX(12px);
+  }
+}
   </style>
 </head>
 <body>
@@ -22,7 +58,7 @@
     <h2 id="pokemonName"></h2>
     <div id="pokeNameJapanese"></div>
     <p id="pokemongenus"></p>
-    <img id="pokemonImage" src="">
+    <img id="pokemonImage" class="fluffy" src="">
     <p id="pokemontext"></p>
   </div>
 </main>
