@@ -22,6 +22,7 @@
     <label for="guessField">予想: </label>
     <input type="number" min="1" max="100" id="guessField">
     <input type="submit" value="予想を入力" id="guessSubmit">
+    <input type="reset" value="リセット" id="guessReset">
     <p id="guessResult"></p>
   </div>
 </main>
@@ -36,6 +37,9 @@
 
   // submitボタンを取得
   let guessSubmit = document.querySelector('#guessSubmit');
+
+  // resetボタンを取得
+  let guessReset = document.querySelector('#guessReset');
 
   // 結果を表示する要素を取得
   let guessResult = document.querySelector('#guessResult');
@@ -54,6 +58,10 @@
     }
   }
 
+  //リセットボタン
+  function リセットする関数の名前 {
+  document.フォームの名前.reset();
+}
   // submitがクリックされたときに、checkGuess関数を呼び出す
   guessSubmit.addEventListener('click', checkGuess);
 </script>
