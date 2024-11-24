@@ -21,7 +21,9 @@
   <div id="pokemon">
     <h2 id="pokemonName"></h2>
     <p id="pokemonjapanName"></p>
+    <p id="pokemongenus"></p>
     <img id="pokemonImage" src="">
+    <p id="pokemontext"></p>
   </div>
 </main>
 
@@ -34,6 +36,12 @@
 
   // ポケモンの画像を表示する要素を取得
   let pokemonImage = document.getElementById('pokemonImage');
+
+  // ポケモンのタイプを表示する要素を取得
+  let pokemonGenus = document.getElementById('pokemongenus');
+
+  // ポケモンのテキストを表示する要素を取得
+  let pokemonText = document.getElementById('pokemontext');
 
   // ポケモンは現在898種
   let pokemonNumber = Math.floor(Math.random() * 898) + 1;
@@ -61,6 +69,8 @@
       // エラーが発生した場合はコンソールに出力
       console.error(`エラーが発生しました:${error}`);
     });
+
+//ポケモンの日本語名
     fetch(`https://pokeapi.co/api/v2/pokemon-species//${pokemonNumber}`)
     .then(function (response) {
       // レスポンスをコンソールに出力
@@ -75,6 +85,12 @@
     
     // ポケモンの名前を表示
     pokemonjapanName.textContent = data.names[9].name;
+
+    // ポケモンのタイプを表示
+    pokemonGenus.textContent = data.genera[8].genus;
+
+    // ポケモンのテキストを表示
+    pokemonText.textContent = data.flavor_text_entries[29].flavor_text;
     })
 
 </script>
